@@ -177,6 +177,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/FOSSConfig.xml:system/etc/FOSSConfig.xml
 
+
+PRODUCT_PACKAGES += \
+    kcal
+
 # Doze mode
 PRODUCT_PACKAGES += \
     Doze
