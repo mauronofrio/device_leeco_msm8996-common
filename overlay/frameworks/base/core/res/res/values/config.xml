@@ -183,11 +183,9 @@
          in gralloc protected buffers.  For this to be true, there must exist
          a protected hardware path for surface flinger to composite and send
          protected buffers to the wifi display video encoder.
-
          If this flag is false, we advise applications not to use protected
          buffers (if possible) when presenting content to a wifi display because
          the content may be blanked.
-
          This flag controls whether the {@link Display#FLAG_SUPPORTS_PROTECTED_BUFFERS}
          flag is set for wifi displays.
     -->
@@ -328,21 +326,31 @@
     <!-- Flag specifying whether or not IMS will use the ImsResolver dynamically -->
     <bool name="config_dynamic_bind_ims">true</bool>
 
-    <!-- Control the behavior when the user triple presses the power button.
-            0 - Nothing
-            1 - Toggle theater mode setting
-            2 - Brightness boost
+    <!-- Hardware keys present on the device, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+             1 - Home
+             2 - Back
+             4 - Menu
+             8 - Assistant (search)
+            16 - App switch
+            32 - Camera
+            64 - Volume rocker
+         For example, a device with Home, Back and Menu keys would set this
+         config to 7. -->
+   <integer name="config_deviceHardwareKeys">83</integer>
+   <!-- Control the behavior when the user triple presses the power button.
+        0 - Nothing
+        1 - Toggle theater mode setting
+        2 - Brightness boost
     -->
-    <integer name="config_triplePressOnPowerBehavior">2</integer>
+   <integer name="config_triplePressOnPowerBehavior">2</integer>
 
-    <!-- Override the default detection behavior for the framework method
-         android.view.ViewConfiguration#hasPermanentMenuKey().
-         Valid settings are:
-         0 - No change. Use the default autodetection behavior.
-         1 - The device DOES have a permanent menu key; ignore autodetection.
-         2 - The device DOES NOT have a permanent menu key; ignore autodetection. -->
-    <integer name="config_overrideHasPermanentMenuKey">2</integer>
-
-    <!-- For performance and storage reasons, limit the number of fingerprints per user -->
-    <integer name="config_fingerprintMaxTemplatesPerUser">6</integer>
+   <!-- Override the default detection behavior for the framework method
+        android.view.ViewConfiguration#hasPermanentMenuKey().
+        Valid settings are:
+        0 - No change. Use the default autodetection behavior.
+        1 - The device DOES have a permanent menu key; ignore autodetection.
+        2 - The device DOES NOT have a permanent menu key; ignore autodetection. -->
+   <integer name="config_overrideHasPermanentMenuKey">2</integer>
 </resources>
