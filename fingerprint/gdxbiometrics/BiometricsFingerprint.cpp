@@ -48,13 +48,8 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
     char vend [PROPERTY_VALUE_MAX];
     property_get("ro.boot.fpsensor", vend, NULL);
 
-    if (!strcmp(vend, "fpc")) {
-        is_goodix = false;
-        mDevice = openHal();
-    } else {
-        is_goodix = true;
-        mDevice = getWrapperService(BiometricsFingerprint::notify);
-    }
+    is_goodix = strcmp(vend, "fpc");
+    mDevice = is_goodix ? getWrapperService(BiometricsFingerprint::notify) : openHal();
 
     if (!mDevice) {
         ALOGE("Can't open HAL module");
