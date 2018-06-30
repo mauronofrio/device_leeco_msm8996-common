@@ -61,7 +61,6 @@ IPACM_OffloadManager::IPACM_OffloadManager()
 	latest_cache_index = 0;
 	elrInstance = NULL;
 	touInstance = NULL;
-	is_cache = false;
 	return ;
 }
 
@@ -363,14 +362,6 @@ RET IPACM_OffloadManager::setUpstream(const char *upstream_name, const Prefix& g
 	if(upstream_name == NULL)
 	{
 		if (default_gw_index == INVALID_IFACE) {
-			for (index = 0; index < MAX_EVENT_CACHE; index++) {
-				if (event_cache[index].valid == true &&
-					event_cache[index ].event == IPA_WAN_UPSTREAM_ROUTE_ADD_EVENT) {
-					event_cache[index].valid = false;
-					memset(event_cache, 0, MAX_EVENT_CACHE*sizeof(framework_event_cache));
-					return SUCCESS;
-				}
-			}
 			IPACMERR("no previous upstream set before\n");
 			return FAIL_INPUT_CHECK;
 		}
@@ -444,7 +435,6 @@ RET IPACM_OffloadManager::setUpstream(const char *upstream_name, const Prefix& g
 					return FAIL_HARDWARE;
 				}
 			}
-			is_cache = true;
 			return SUCCESS;
 		}
 
