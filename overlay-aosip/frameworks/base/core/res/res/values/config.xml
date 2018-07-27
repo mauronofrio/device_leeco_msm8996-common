@@ -39,7 +39,6 @@
     <!-- Does the battery LED support multiple colors?
          Used to decide if the user can change the colors -->
     <bool name="config_multiColorBatteryLed">true</bool>
-
     <!-- Do the battery/notification LEDs support pulsing?
          Used to decide if we show pulse settings -->
     <bool name="config_canForceDozeNotifications">true</bool>
@@ -59,8 +58,8 @@
     <bool name="config_button_brightness_support">true</bool>
     <integer name="config_button_brightness_default">250</integer>
     <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
-	  <bool name="config_displayBlanksAfterDoze">true</bool>
-	  <bool name="config_proximityCheckOnWake">true</bool>
-    <integer name="config_proximityCheckTimeout">250</integer>
-    <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
+    <bool name="config_displayBlanksAfterDoze">true</bool>
+    <bool name="config_proximityCheckOnWake">true</bool>
+    <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
+    <integer name="config_proximityCheckTimeout">100</integer>
 </resources>
