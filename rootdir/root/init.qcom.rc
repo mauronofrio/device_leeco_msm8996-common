@@ -921,7 +921,7 @@ service hvdcp_opti /vendor/bin/hvdcp_opti
     user root
     group root
 
-service charger /charger
+service charger /sbin/chargeonlymode
     class charger
     group system graphics log
     seclabel u:r:charger:s0
