@@ -96,6 +96,8 @@ void init_target_properties()
             property_set("ro.telephony.default_network", "10,10");
             // Power profile
             property_set("ro.power_profile.override", "power_profile_zl0");
+            // Prop for Leeco Extras
+            property_set("persist.battery.save", "0");
             unknownDevice = 0;
         }
         else if (!strncmp(device.c_str(), "le_zl1_oversea", 14)) {
@@ -109,6 +111,8 @@ void init_target_properties()
             property_set("ro.telephony.default_network", "10");
             // NFC
             property_set("persist.nfc.smartcard.config", "SIM1,eSE1");
+            // Prop for Leeco Extras
+            property_set("persist.battery.save", "0");
             unknownDevice = 0;
         }
         else if (!strncmp(device.c_str(), "le_zl1", 6)) {
@@ -121,6 +125,8 @@ void init_target_properties()
             property_set("ro.telephony.default_network", "10,10");
             // NFC
             property_set("persist.nfc.smartcard.config", "SIM1,SIM2,eSE1");
+            // Prop for Leeco Extras
+            property_set("persist.battery.save", "0");
             unknownDevice = 0;
         }
         else if (!strncmp(device.c_str(), "le_x2_na_oversea", 16)) {
